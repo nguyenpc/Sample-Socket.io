@@ -40,11 +40,11 @@ io.of('/mobile').on('connection', (socket) => {
 });
 
 app.get('/admin', (req, res) => {
-    io.of('/admin').emit('message', 'Hello Admin!');
-    res.send("Message Received");
+    io.of('/admin').emit('message', 'Hello Admin! ' + new Date());
+    res.send("Message Sent to Admin");
 });
 
 app.get('/mobile', (req, res) => {
-    io.of('/mobile').emit('message', 'Hello Mobile!');
-    res.send("Message Received");
+    io.of('/mobile').emit('message', 'Hello Mobile! ' + new Date());
+    res.send("Message sent to client");
 });
